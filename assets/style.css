@@ -1,0 +1,77 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: linear-gradient(90deg, rgba(4,0,66,1) 0%, rgba(9,5,112,1) 28%, rgba(0,198,212,1) 100%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  #city-input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  #search-form button {
+    padding: 5px 10px;
+  }
+  
+  #weather-display {
+    margin-bottom: 20px;
+  }
+  
+  #current-weather {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  #current-weather p {
+    margin: 5px 0;
+  }
+  
+  #forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .forecast-item {
+    width: 120px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+  }
+  
+  #recent-cities {
+    margin-bottom: 20px;
+  }
+  
+  #city-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #city-list li {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
