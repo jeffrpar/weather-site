@@ -66,17 +66,26 @@ function updateWeatherDisplay(weatherData) {
 
 // Function to update the forecast display with the retrieved data
 function updateForecastDisplay(weatherData) {
-    // Extract the necessary information from the weatherData object
-    // const cityName = weatherData.name;
-    // const temperature = weatherData.main.temp;
-    // const description = weatherData.weather[0].description;
-    for (let i = 0; i < 40; i += 8) {
-        console.log(weatherData.list[i].main.temp);
-        console.log(weatherData.list[i].weather[0].description);
-    }
+    const forecastContainer = document.getElementById('forecast');
+    forecastContainer.innerHTML = ''; // Clear previous forecast data
 
-    // Update the HTML elements with the retrieved weather information
-    //document.getElementById('city-name').textContent = cityName;
-    //document.getElementById('temperature').textContent = `Temperature: ${temperature} °F`;
-    //document.getElementById('description').textContent = `Description: ${description}`;
+    // Loop through the forecast data for the next five days (assuming data is available)
+    for (let i = 0; i < 40; i += 8) {
+        // Extract the forecast details
+        const temperature = weatherData.list[i].main.temp;
+        const description = weatherData.list[i].weather[0].description;
+
+        // Create a forecast item element
+        const forecastItem = document.createElement('div');
+        forecastItem.classList.add('forecast-item');
+
+        // Populate the forecast item with data
+        forecastItem.innerHTML = `
+        <p>Temperature: ${temperature.toFixed(1)} °F</p>
+        <p>Description: ${description}</p>
+      `;
+
+        // Append the forecast item to the forecast container
+        forecastContainer.appendChild(forecastItem);
+    }
 }
