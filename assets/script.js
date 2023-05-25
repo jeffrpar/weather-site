@@ -11,6 +11,7 @@ form.addEventListener('submit', function (event) {
     if (cityName !== '') {
         fetchWeatherData(cityName);
         fetchForecastData(cityName);
+        // createCityButton(city);
         cityInput.value = ''; // Clear the input field
     }
 });
@@ -50,6 +51,18 @@ function fetchForecastData(city) {
             // Display an error message to the console
         });
 }
+
+// function createCityButton(city) {
+//     const cityButtonsContainer = document.getElementById('city-buttons');
+
+//     const button = document.createElement('button');
+//     button.textContent = city;
+//     button.addEventListener('click', function () {
+//         fetchWeatherData(city);
+//     });
+
+//     cityButtonsContainer.appendChild(button);
+// }
 
 // Function to update the weather display with the retrieved data
 function updateWeatherDisplay(weatherData) {
