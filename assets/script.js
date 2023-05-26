@@ -70,11 +70,16 @@ function updateWeatherDisplay(weatherData) {
     const cityName = weatherData.name;
     const temperature = weatherData.main.temp;
     const description = weatherData.weather[0].description;
+    const humidity = weatherData.main.humidity;
+    const windSpd = weatherData.wind.speed;
+    console.log(weatherData);
 
     // Update the HTML elements with the retrieved weather information
     document.getElementById('city-name').textContent = cityName;
     document.getElementById('temperature').textContent = `Temperature: ${temperature} °F`;
     document.getElementById('description').textContent = `Description: ${description}`;
+    document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+    document.getElementById('wind-speed').textContent = `Wind Speed: ${windSpd} mph`;
 }
 
 // Function to update the forecast display with the retrieved data
@@ -87,6 +92,8 @@ function updateForecastDisplay(weatherData) {
         // Extract the forecast details
         const temperature = weatherData.list[i].main.temp;
         const description = weatherData.list[i].weather[0].description;
+        const humidity = weatherData.list[i].main.humidity;
+        const windSpd = weatherData.list[i].wind.speed;
 
         // Create a forecast item element
         const forecastItem = document.createElement('div');
@@ -96,6 +103,8 @@ function updateForecastDisplay(weatherData) {
         forecastItem.innerHTML = `
         <p>Temperature: ${temperature.toFixed(1)} °F</p>
         <p>Description: ${description}</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Wind Speed: ${windSpd} mph</p>
       `;
 
         // Append the forecast item to the forecast container
